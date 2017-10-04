@@ -1,0 +1,84 @@
+@keyframes vjs-spinner-spin {
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes vjs-spinner-spin {
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes vjs-spinner-fade {
+    0%,
+    100%,
+    20%,
+    60% {
+        border-top-color: #73859f
+    }
+    35% {
+        border-top-color: #fff
+    }
+}
+
+@-webkit-keyframes vjs-spinner-fade {
+    0%,
+    100%,
+    20%,
+    60% {
+        border-top-color: #73859f
+    }
+    35% {
+        border-top-color: #fff
+    }
+}
+@media print {
+    .video-js>:not(.vjs-tech):not(.vjs-poster) {
+        visibility: hidden
+    }
+}
+
+@media \0screen {
+    .vjs-user-inactive.vjs-playing .vjs-control-bar:before {
+        content: ""
+    }
+    .vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar {
+        visibility: hidden
+    }
+}
+
+
+@media (max-width:600px),
+(max-height:250px) {
+    .vjs-error-display .vjs-errors-details,
+    .vjs-error-display .vjs-errors-message,
+    .vjs-errors-flashmessage {
+        display: none
+    }
+    .vjs-error-display {
+        font-size: 14px;
+        background-color: #000
+    }
+    .vjs-error-display .vjs-errors-content-container {
+        top: 15px
+    }
+    .vjs-error-display .vjs-errors-headline {
+        font-size: 16px;
+        font-weight: 700
+    }
+    .vjs-error-display .vjs-errors-dialog {
+        border: none;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0
+    }
+}
+/* fallback */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v29/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
+  }

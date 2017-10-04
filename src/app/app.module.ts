@@ -21,7 +21,7 @@ import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms'; 
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
-
+import { MediaPlayerService } from './services/media-player-service';
 
 @NgModule({
   declarations: [
@@ -49,7 +49,8 @@ import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
   ],
   providers: [DishService,
     PromotionService,ProcessHTTPMsgService,
-    LeaderService],
+    LeaderService,
+    MediaPlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

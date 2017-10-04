@@ -5,6 +5,9 @@ import { Location } from '@angular/common';
 import { DatePipe } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 import { DishService } from '../services/dish.service';
+import { MediaPlayerService } from '../services/media-player-service';
+
+declare var jwplayer: any;
 
 const DISH = {
     name: 'Uthappizza',
@@ -61,10 +64,11 @@ export class DishdetailComponent implements OnInit {
 
     constructor(private dishservice: DishService,
         private route: ActivatedRoute,
-        private location: Location) { }
+        private location: Location,
+        private stream: MediaPlayerService) { }
 
     ngOnInit() {
-
+        this.stream.loadMedia(1);
         this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
         this.route.params
             .switchMap((params: Params) => this.dishservice.getDish(+params['id']))
@@ -80,5 +84,4 @@ export class DishdetailComponent implements OnInit {
     goBack(): void {
         this.location.back();
     }
-
 }
